@@ -7,7 +7,7 @@
 
 #Find the next triangle number that is also pentagonal and hexagonal.
 
-#require 'set'
-p = (20_000..60_000).map { |n| n*(3*n-1)/2 }
-h = (20_000..60_000).map { |n| n*(2*n-1) }
+require 'set'
+p = (20_000..60_000).map { |n| n*(3*n-1)/2 }.to_set
+h = (20_000..60_000).map { |n| n*(2*n-1) }.to_set
 puts (20_000..60_000).map { |n| n*(n+1)/2 }.detect { |n| p.include?(n) && h.include?(n) }
